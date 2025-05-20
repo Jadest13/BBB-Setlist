@@ -90,9 +90,10 @@ const RecentAddedSongList = ({ songList }: { songList: any[] }) => {
       <h1 className="text-3xl font-bold">최근 추가된 곡</h1>
       <div className="hide-scrollbar flex w-full overflow-x-scroll whitespace-nowrap scroll">
         <div className="grid grid-flow-col grid-rows-4 gap-x-6 gap-y-2 mb-2">
-          {songList.map((e, i) => {
-            return <RecentAddedSong songData={e} key={i} />;
-          })}
+          {songList.length &&
+            songList.map((e, i) => {
+              return <RecentAddedSong songData={e} key={i} />;
+            })}
         </div>
       </div>
     </div>
