@@ -14,10 +14,7 @@ export async function GET() {
         "Access-Control-Allow-Headers": "Content-Type",
       },
     });
-  } catch {
-    return NextResponse.json(
-      { error: "Internal Server Error" },
-      { status: 500 }
-    );
+  } catch (error) {
+    return NextResponse.json({ error: error }, { status: 500 });
   }
 }
